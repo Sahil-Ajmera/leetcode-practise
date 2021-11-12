@@ -24,6 +24,9 @@ node having no previousSaveD to compare,save this node value as previousSaved, a
 node having greater or equal to than previosSaveD, add to result,  save this node value as previousSaved
 node not having greater, traverse left and right, save this node value as previousSaved
 result = [3, 4]
+
+Time Complexity: O(N^2) (?)
+Space Complexity: O(N^2) (?)
 """
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
