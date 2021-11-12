@@ -74,3 +74,48 @@ class Solution:
         num_good_nodes = 0
         dfs(root, float("-inf"))
         return num_good_nodes
+
+"""
+Iterative solution O(N) time complexity O(N) space complexity
+that can use any variant of pre order traversal since the path from root to a node is unique
+"""
+
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        stack = [(root, float("-inf"))]
+        num_good_nodes = 0
+        while stack:
+            node, max_so_far = stack.pop()
+            if max_so_far <= node.val:
+                num_good_nodes += 1
+            if node.left:
+                stack.append((node.left, max(node.val, max_so_far)))
+            if node.right:
+                stack.append((node.right, max(node.val, max_so_far)))
+        
+        return num_good_nodes
+
+"""
+BFS 
+
+Time Complexity: O(N)
+
+Space Complexity: O(N) because from one level to another all nodes in the next level will be populated which in the leaf nodes are N/2 of all nodes in the tree.
+"""
+
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        num_good_nodes = 0
+        
+        # Use collections.deque for efficient popping
+        queue = deque([(root, float("-inf"))])
+        while queue:
+            node, max_so_far = queue.popleft()
+            if max_so_far <= node.val:
+                num_good_nodes += 1
+            if node.right:
+                queue.append((node.right, max(node.val, max_so_far)))
+            if node.left:
+                queue.append((node.left, max(node.val, max_so_far)))
+        
+        return num_good_nodes
