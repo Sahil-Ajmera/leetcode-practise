@@ -106,6 +106,9 @@ class Solution(object):
       
 """
 Solution to have the new nodes as next for old nodes, assign the random pointers as appropriate and unweave the original linked list back to its original state
+
+Time Complexity: O(N)
+Space complexity: O(1)
 """
 
 class Solution(object):
