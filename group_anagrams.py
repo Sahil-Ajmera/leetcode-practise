@@ -42,6 +42,7 @@ class Solution:
         """
         
         Time Complexity : O(NK)
+        Space Complexity: O(NK)
         strings_character_count_map: Dict[tuple, list]
         
         for s in strs:
