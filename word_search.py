@@ -23,9 +23,7 @@ Output: false
 
 Time Complexity: O(N * 3^L) N= number of cells on board L = length of word
 
-Space Complexity: O(N) for visited matrix + O(L) call stack memory
-
-If we update the input in place we have O(L) call stack memory
+Space Complexity: O(N) for visited matrix
 """
 
 class Solution:
